@@ -3,6 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import fetch from "cross-fetch";
 import { withRouter } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 class App extends Component {
   constructor(props) {
@@ -30,15 +32,18 @@ class App extends Component {
       .then(res => {
         console.log(res);
         this.setState({ player: res.player });
+        this.routeToGamesPage();
       });
-    this.routeToGamesPage();
   };
 
   routeToGamesPage = () => {
     console.log("history", this.props.history);
     // const path = this.props.history.location.pathname.slice(0, 22);
     // const switchedPath = path.concat("/games");
-    this.props.history.push("/games");
+    this.props.history.push({
+      pathname: "/games",
+      state: { username: this.state.username, player: this.state.player }
+    });
   };
   onUsernameChange = e => {
     this.setState({ username: e.target.value });
@@ -53,21 +58,31 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} alt="logo" />
-          <label>Username:</label>
-          <input
+          <TextField
             onChange={e => this.onUsernameChange(e)}
-            name="username:"
+            required
+            label="Username"
             type="text"
+            margin="normal"
+            variant="outlined"
             placeholder="username"
           />
-          <label>Password:</label>
-          <input
+          <TextField
             onChange={e => this.onPasswordChange(e)}
-            name="password:"
             type="password"
+            required
             placeholder="password"
+            margin="normal"
+            variant="outlined"
+            label="Password"
           />
-          <button onClick={this.handleOnClick}>Login</button>
+          <Button
+            onClick={this.handleOnClick}
+            variant="contained"
+            color="primary"
+          >
+            Login
+          </Button>
         </header>
       </div>
     );
