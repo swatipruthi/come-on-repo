@@ -10,7 +10,7 @@ import Login from "./Login";
 const routing = (
   <Router>
     <div>
-      <Route path="/login" component={Login} />
+      <Route exact path="/" component={Login} />
       <Route path="/games" component={Landing} />
     </div>
   </Router>

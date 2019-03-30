@@ -3,7 +3,7 @@
 - npm i
 - npm start
 
-  Now the app will be serving at localhost:3000/login
+  Now the app will be serving at localhost:3000
 
 ## About the app
 

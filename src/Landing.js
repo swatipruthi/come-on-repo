@@ -39,7 +39,7 @@ export default class Landing extends React.Component {
       .then(res => res.json())
       .then(res => {
         if (res.status === "success")
-          this.props.history.push({ pathname: "/login" });
+          this.props.history.push({ pathname: "/" });
       });
   };
 
