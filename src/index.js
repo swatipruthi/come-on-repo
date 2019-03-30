@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
-import Games from "./Games";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import Landing from "./Landing";
+
+import "./index.css";
+import Login from "./Login";
 
 const routing = (
-  //   <Provider>
   <Router>
     <div>
-      <Route path="/login" component={App} />
-      <Route path="/games" component={Games} />
+      <Route path="/login" component={Login} />
+      <Route path="/games" component={Landing} />
     </div>
   </Router>
 );

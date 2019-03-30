@@ -31,3 +31,25 @@
     transform: rotate(360deg);
   }
 }
+
+.show-cross {
+  position: absolute;
+  top: 40px;
+  right: 70px;
+}
+.close-icon {
+  width: 10px;
+  height: 10px;
+}
+.search-field {
+  width: 15%;
+  border-radius: 5px;
+  padding: 10px;
+  float: right;
+  position: relative;
+  bottom: 115px;
+  margin: 10px;
+  right: 50px;
+  border-style: solid;
+  border-color: lightgrey;
+}
